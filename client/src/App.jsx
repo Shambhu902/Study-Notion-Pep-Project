@@ -93,7 +93,7 @@ const AppContent = () => {
             <ToastContainer position="top-right" autoClose={3000} />
             <nav className="p-5 glass-effect shadow-lg flex justify-between items-center sticky top-0 z-50 border-b border-purple-100">
                 <Link to="/" className="text-2xl font-extrabold gradient-text flex items-center gap-2 hover:scale-105 transition-transform duration-300">
-                    <span className="text-3xl">🎓</span> PeerHub 
+                    <span className="text-3xl">🎓</span> StudyNotion 
                     {isInstructor && <span className="text-xs text-purple-800 bg-purple-100 px-3 py-1 rounded-full font-semibold">Instructor</span>}
                 </Link>
                 <div className="space-x-6 flex items-center">
@@ -175,7 +175,7 @@ const AppContent = () => {
                                     </div>
                                     
                                     <h1 className="text-7xl md:text-8xl font-black mb-6 leading-tight">
-                                        <span className="gradient-text">PeerHub</span>
+                                        <span className="gradient-text">StudyNotion</span>
                                     </h1>
                                     
                                     <p className="text-2xl md:text-3xl text-gray-700 mb-8 max-w-3xl mx-auto font-medium leading-relaxed">
@@ -214,7 +214,7 @@ const AppContent = () => {
                         <div className="py-20 bg-white">
                             <div className="max-w-7xl mx-auto px-6">
                                 <div className="text-center mb-16 animate-fade-in-up">
-                                    <h2 className="text-5xl font-black mb-4 text-gray-900">Why Choose <span className="gradient-text">PeerHub</span>?</h2>
+                                    <h2 className="text-5xl font-black mb-4 text-gray-900">Why Choose <span className="gradient-text">StudyNotion</span>?</h2>
                                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">Experience the future of collaborative learning with powerful features designed for students and instructors.</p>
                                 </div>
                                 
@@ -376,7 +376,7 @@ const AppContent = () => {
                         <div className="py-20 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
                             <div className="max-w-4xl mx-auto px-6 text-center">
                                 <h2 className="text-5xl font-black text-white mb-6 animate-fade-in-up">Ready to Transform Your Learning?</h2>
-                                <p className="text-xl text-purple-100 mb-10 animate-fade-in-up" style={{animationDelay: '0.2s'}}>Join thousands of students and instructors already using PeerHub to enhance their educational experience.</p>
+                                <p className="text-xl text-purple-100 mb-10 animate-fade-in-up" style={{animationDelay: '0.2s'}}>Join thousands of students and instructors already using StudyNotion to enhance their educational experience.</p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
                                     <Link to="/register" className="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-white/30 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
                                         Start Learning Now

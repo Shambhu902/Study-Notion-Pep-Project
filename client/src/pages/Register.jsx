@@ -59,7 +59,7 @@ const Register = (props) => {
               </div>
             </div>
             <h2 className="text-4xl font-black mb-2">
-              <span className="gradient-text">Join PeerHub</span>
+              <span className="gradient-text">Join StudyNotion</span>
             </h2>
             <p className="text-gray-600">Start your collaborative learning journey today</p>
           </div>

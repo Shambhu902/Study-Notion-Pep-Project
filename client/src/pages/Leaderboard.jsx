@@ -21,7 +21,7 @@ const Leaderboard = () => {
 
   return (
     <div className="p-8">
-      <h2 className="text-3xl font-bold mb-6 text-center text-blue-700">🏆 PeerHub Leaderboard 🏆</h2>
+    <h2 className="text-3xl font-bold mb-6 text-center text-blue-700">🏆 StudyNotion Leaderboard 🏆</h2>
       <div className="overflow-x-auto shadow-md rounded-lg">
           <table className="w-full text-sm text-left text-gray-500">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50">
