@@ -12,15 +12,16 @@ const allowedOrigins = [
   "https://pep-mern-frontend.vercel.app"
 ];
 
-// Middleware
+// CORS Middleware (FIXED VERSION)
 app.use(cors({
-  origin: allowedOrigins,
-  credentials: true
-}));
-
-// Handle preflight requests (IMPORTANT FIX)
-app.options("*", cors({
-  origin: allowedOrigins,
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error("CORS not allowed"), false);
+    }
+  },
   credentials: true
 }));
 
@@ -43,9 +44,13 @@ app.get('/api/test', (req, res) => {
   res.json({ message: 'Backend is running successfully!' });
 });
 
+// Root Route (optional but useful)
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
+
 // Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log('Environment loaded.');
 });
