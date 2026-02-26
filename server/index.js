@@ -6,16 +6,26 @@ const connectDB = require('./src/config/db');
 // Initialize App
 const app = express();
 
-// Middleware
-const cors = require("cors");
+// Allowed origins
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://pep-mern-frontend.vercel.app"
+];
 
+// Middleware
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://pep-mern-frontend.vercel.app"
-  ],
+  origin: allowedOrigins,
   credentials: true
 }));
+
+// Handle preflight requests (IMPORTANT FIX)
+app.options("*", cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
+// Body parser
+app.use(express.json());
 
 // Connect Database
 connectDB();
