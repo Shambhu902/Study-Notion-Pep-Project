@@ -7,9 +7,13 @@ const connectDB = require('./src/config/db');
 const app = express();
 
 // Middleware
-app.use(express.json());
+const cors = require("cors");
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: [
+    "http://localhost:5173",
+    "https://pep-mern-frontend.vercel.app"
+  ],
   credentials: true
 }));
 
