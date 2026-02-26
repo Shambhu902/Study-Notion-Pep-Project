@@ -19,7 +19,7 @@ const SubmitReview = () => {
      // Fetch assignment details to show user what they are reviewing
      const fetchAssignment = async () => {
          const token = localStorage.getItem('token');
-         const res = await fetch(`http://localhost:5001/api/assignments/${id}`, {
+         const res = await fetch(`https://study-notion-pep-project.onrender.com/api/assignments/${id}`, {
              headers: { 'Authorization': `Bearer ${token}` }
          });
          const data = await res.json();
@@ -44,7 +44,7 @@ const SubmitReview = () => {
       };
 
       try {
-          const res = await fetch('http://localhost:5001/api/reviews/submit', {
+          const res = await fetch('https://study-notion-pep-project.onrender.com/api/reviews/submit', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

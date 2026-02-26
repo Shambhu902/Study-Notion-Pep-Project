@@ -13,7 +13,7 @@ const ViewReviews = () => {
 
   const fetchAssignment = async () => {
     const token = localStorage.getItem('token');
-    const res = await fetch(`http://localhost:5001/api/assignments/${id}`, {
+    const res = await fetch(`https://study-notion-pep-project.onrender.com/api/assignments/${id}`, {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     const data = await res.json();
@@ -22,7 +22,7 @@ const ViewReviews = () => {
 
   const fetchReviews = async () => {
       const token = localStorage.getItem('token');
-      const res = await fetch(`http://localhost:5001/api/reviews/assignment/${id}`, {
+      const res = await fetch(`https://study-notion-pep-project.onrender.com/api/reviews/assignment/${id}`, {
           headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await res.json();
@@ -34,7 +34,7 @@ const ViewReviews = () => {
     
     if (assignment.uploadType === 'upload') {
       const token = localStorage.getItem('token');
-      fetch(`http://localhost:5001/api/assignments/download/${assignment._id}`, {
+      fetch(`https://study-notion-pep-project.onrender.com/api/assignments/download/${assignment._id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
         .then(res => res.blob())
@@ -51,7 +51,7 @@ const ViewReviews = () => {
   const markUseful = async (reviewId) => {
       try {
           const token = localStorage.getItem('token');
-          const res = await fetch('http://localhost:5001/api/reviews/rate', {
+          const res = await fetch('https://study-notion-pep-project.onrender.com/api/reviews/rate', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

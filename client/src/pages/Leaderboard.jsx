@@ -7,7 +7,7 @@ const Leaderboard = () => {
     const fetchLeaderboard = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5001/api/users/leaderboard', {
+            const res = await fetch('https://study-notion-pep-project.onrender.com/api/users/leaderboard', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();

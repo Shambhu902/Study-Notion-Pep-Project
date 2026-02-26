@@ -15,10 +15,10 @@ const AdminDashboard = () => {
         const headers = { 'Authorization': `Bearer ${token}` };
 
         try {
-            const usersRes = await fetch('http://localhost:5001/api/admin/users', { headers });
+            const usersRes = await fetch('https://study-notion-pep-project.onrender.com/api/admin/users', { headers });
             if(usersRes.ok) setUsers(await usersRes.json());
             
-            const reviewsRes = await fetch('http://localhost:5001/api/admin/reviews', { headers });
+            const reviewsRes = await fetch('https://study-notion-pep-project.onrender.com/api/admin/reviews', { headers });
             if(reviewsRes.ok) setReviews(await reviewsRes.json());
 
         } catch (err) {
@@ -30,7 +30,7 @@ const AdminDashboard = () => {
         if(!window.confirm('Delete this review permanently?')) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`http://localhost:5001/api/admin/reviews/${id}`, {
+            const res = await fetch(`https://study-notion-pep-project.onrender.com/api/admin/reviews/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });

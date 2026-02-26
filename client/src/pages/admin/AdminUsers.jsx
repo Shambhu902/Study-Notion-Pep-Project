@@ -9,7 +9,7 @@ const AdminUsers = () => {
     const fetchUsers = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5001/api/admin/users', {
+            const res = await fetch('https://study-notion-pep-project.onrender.com/api/admin/users', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if(res.ok) setUsers(await res.json());
@@ -26,7 +26,7 @@ const AdminUsers = () => {
         if(!window.confirm(`Set user status to ${newStatus}?`)) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5001/api/admin/users/status', {
+            const res = await fetch('https://study-notion-pep-project.onrender.com/api/admin/users/status', {
                 method: 'PATCH',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ const AdminUsers = () => {
         if(!window.confirm(`Change role to ${newRole}?`)) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5001/api/admin/users/role', {
+            const res = await fetch('https://study-notion-pep-project.onrender.com/api/admin/users/role', {
                 method: 'PATCH',
                 headers: { 
                     'Content-Type': 'application/json',

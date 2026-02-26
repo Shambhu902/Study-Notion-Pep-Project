@@ -9,7 +9,7 @@ const AdminReviews = () => {
     const fetchReviews = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5001/api/admin/reviews', {
+            const res = await fetch('https://study-notion-pep-project.onrender.com/admin/reviews', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if(res.ok) setReviews(await res.json());
@@ -26,7 +26,7 @@ const AdminReviews = () => {
         if(!window.confirm('Delete review?')) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`http://localhost:5001/api/admin/reviews/${id}`, {
+            const res = await fetch(`https://study-notion-pep-project.onrender.com/api/admin/reviews/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });
@@ -42,7 +42,7 @@ const AdminReviews = () => {
         if(!reason) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5001/api/admin/reviews/flag', {
+            const res = await fetch('https://study-notion-pep-project.onrender.com/api/admin/reviews/flag', {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',

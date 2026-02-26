@@ -13,7 +13,7 @@ const InstructorDashboard = () => {
     const fetchAssignments = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5001/api/instructor/assignments', {
+            const res = await fetch('https://study-notion-pep-project.onrender.com/api/instructor/assignments', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (res.ok) {
@@ -41,7 +41,7 @@ const InstructorDashboard = () => {
         
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5001/api/instructor/close-assignment', {
+            const res = await fetch('https://study-notion-pep-project.onrender.com/api/instructor/close-assignment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const InstructorDashboard = () => {
         // Direct download link logic
         // For fetch with headers to work with download, we use a trick or simply window.open if cookies were used.
         // Since we use Bearer token, we need to fetch then blob.
-        fetch(`http://localhost:5001/api/instructor/export/${id}`, {
+        fetch(`https://study-notion-pep-project.onrender.com/api/instructor/export/${id}`, {
              headers: { 'Authorization': `Bearer ${token}` }
         })
         .then(res => res.blob())

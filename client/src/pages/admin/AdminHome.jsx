@@ -11,7 +11,7 @@ const AdminHome = () => {
         const fetchStats = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await fetch('http://localhost:5001/api/admin/analytics', {
+                const res = await fetch('https://study-notion-pep-project.onrender.com/api/admin/analytics', {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 if(res.ok) setStats(await res.json());

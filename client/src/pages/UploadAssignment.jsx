@@ -85,7 +85,7 @@ const UploadAssignment = () => {
         formDataToSend.append('description', description);
         formDataToSend.append('requiredReviews', requiredReviews);
 
-        res = await fetch('http://localhost:5001/api/assignments/create', {
+        res = await fetch('https://study-notion-pep-project.onrender.com/api/assignments/create', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -99,7 +99,7 @@ const UploadAssignment = () => {
           return;
         }
 
-        res = await fetch('http://localhost:5001/api/assignments/create', {
+        res = await fetch('https://study-notion-pep-project.onrender.com/api/assignments/create', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

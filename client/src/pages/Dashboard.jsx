@@ -11,12 +11,12 @@ const Dashboard = () => {
         const headers = { 'Authorization': `Bearer ${token}` };
 
         // Fetch Stats
-        const statsRes = await fetch('http://localhost:5001/api/users/stats', { headers });
+        const statsRes = await fetch('https://study-notion-pep-project.onrender.com/api/users/stats', { headers });
         const statsData = await statsRes.json();
         setStats(statsData);
 
         // Fetch Recent Assignments Summary (or all for now)
-        const assignRes = await fetch('http://localhost:5001/api/assignments/my', { headers });
+        const assignRes = await fetch('https://study-notion-pep-project.onrender.com/api/assignments/my', { headers });
         const assignData = await assignRes.json();
         setMyAssignments(assignData.slice(0, 3)); // Show top 3 recent
     };

@@ -34,7 +34,7 @@ const AppContent = () => {
         if (token) {
             try {
                 // Verify token and get role
-                const res = await fetch('http://localhost:5001/api/auth/me', {
+                const res = await fetch('https://study-notion-pep-project.onrender.com/api/auth/me', {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 if (res.ok) {

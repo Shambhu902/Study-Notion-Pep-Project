@@ -6,7 +6,7 @@ const MyAssignments = () => {
   useEffect(() => {
     const fetchAssignments = async () => {
        const token = localStorage.getItem('token');
-       const res = await fetch('http://localhost:5001/api/assignments/my', {
+       const res = await fetch('https://study-notion-pep-project.onrender.com/api/assignments/my', {
            headers: { 'Authorization': `Bearer ${token}` }
        });
        const data = await res.json();
@@ -19,7 +19,7 @@ const MyAssignments = () => {
     if (assignment.uploadType === 'upload') {
       // Download file
       const token = localStorage.getItem('token');
-      fetch(`http://localhost:5001/api/assignments/download/${assignment._id}`, {
+      fetch(`https://study-notion-pep-project.onrender.com/api/assignments/download/${assignment._id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
         .then(res => res.blob())
